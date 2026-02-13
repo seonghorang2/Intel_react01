@@ -1,0 +1,279 @@
+/* =========================
+   🎨 Design Tokens (색상 시스템)
+========================= */
+:root {
+  --primary: #7c3aed;
+  --primary-dark: #6d28d9;
+
+  --danger: #ef4444;
+  --danger-dark: #dc2626;
+
+  --warning: #f97316;
+  --warning-dark: #ea580c;
+
+  --gray: #ccc;
+  --text-gray: #666;
+
+  --border: #eee;
+  --input-border: #ddd;
+  --bg-soft: #fafafa;
+}
+
+/* =========================
+   Container
+========================= */
+.container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+/* =========================
+   Count
+========================= */
+.count {
+  margin: 10px 0 20px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* =========================
+   Input Area
+========================= */
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.input-box input {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid var(--input-border);
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.input-box input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Add Button */
+.input-box button {
+  padding: 12px 20px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.input-box button:hover {
+  background: var(--primary-dark);
+}
+
+/* =========================
+   Filter Header
+========================= */
+.list-header {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.filter {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.filter span {
+  font-weight: 600;
+}
+
+/* Filter Buttons */
+.filter button {
+  background: #f3f3f3;
+  border: 1px solid var(--input-border);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.filter button:hover {
+  background: #e9ddff;
+}
+
+.filter button.active {
+  background: var(--primary);
+  color: white;
+  border: none;
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.25);
+}
+
+.filter button.active:hover {
+  background: var(--primary);
+}
+
+/* =========================
+   Todo List
+========================= */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+  transition: 0.2s;
+}
+
+/* Hover interaction */
+.todo-list li:hover {
+  background: var(--bg-soft);
+}
+
+.todo-list li span {
+  flex: 1;
+}
+
+/* Delete icon */
+.todo-list li button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.15s;
+}
+
+.todo-list li button:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Completed state */
+.todo-list li.completed span {
+  color: #999;
+  text-decoration: line-through;
+}
+
+/* =========================
+   Bottom Buttons
+========================= */
+.bottom-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.bottom-actions button {
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Danger buttons */
+.bottom-actions .danger {
+  color: white;
+}
+
+/* 전체삭제 */
+.bottom-actions .danger:first-child {
+  background: var(--danger);
+}
+
+.bottom-actions .danger:first-child:hover:not(:disabled) {
+  background: var(--danger-dark);
+}
+
+/* 완료삭제 */
+.bottom-actions .danger:last-child {
+  background: var(--warning);
+}
+
+.bottom-actions .danger:last-child:hover:not(:disabled) {
+  background: var(--warning-dark);
+}
+
+/* Disabled State */
+.bottom-actions .danger:disabled {
+  background: var(--gray);
+  color: var(--text-gray);
+  cursor: not-allowed;
+}
+
+.bottom-actions .danger:disabled:hover {
+  background: var(--gray);
+}
+
+/* =========================
+   Accessibility / Global
+========================= */
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* =========================
+   check animation
+========================= */
+.todo-list li span {
+  flex: 1;
+  transition: 0.25s ease;
+}
+
+.todo-list li.completed span {
+  color: #999;
+  text-decoration: line-through;
+  transform: scale(0.98);
+}
+
+.todo-list input[type="checkbox"] {
+  transform: scale(1);
+  transition: 0.15s;
+}
+
+.todo-list input[type="checkbox"]:checked {
+  transform: scale(1.25);
+}
+
+/* =========================
+  delete animation
+========================= */
+.todo-list li {
+  transition: all 0.25s ease;
+}
+
+.todo-list li.removing {
+  opacity: 0;
+  transform: translateX(40px);
+}
