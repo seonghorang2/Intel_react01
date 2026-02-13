@@ -174,7 +174,7 @@ function TodoList() {
   ======================= */
   return (
     <div className="container">
-      <h1>📝 Todo List</h1>
+      <h1>📝투두리스트📝</h1>
 
       <p className="count">
         {remainingCount === 0
