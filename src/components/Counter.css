@@ -38,11 +38,11 @@
   transform: scale(0.95);
 }
 
-.positive {
+.counter_positive {
   color: red;
 }
 
-.negative {
+.counter_negative {
   color: blue;
 }
 

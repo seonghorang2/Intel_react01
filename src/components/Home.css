@@ -1,0 +1,52 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background: linear-gradient(135deg, #4a90d9, #7b61ff);
+}
+
+.home-card {
+  background: white;
+  padding: 50px 60px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.home-card h1 {
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+
+.home-card p {
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.home-btn {
+  padding: 10px 20px;
+  background-color: #4a90d9;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.home-btn:hover {
+  background-color: #357abd;
+}
+
+.home-btn.secondary {
+  background-color: #7b61ff;
+}
+
+.home-btn.secondary:hover {
+  background-color: #5e48c7;
+}

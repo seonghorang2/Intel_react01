@@ -176,7 +176,7 @@ function TodoList() {
     <div className="container">
       <h1>📝투두리스트📝</h1>
 
-      <p className="count">
+      <p className="list_count">
         {remainingCount === 0
           ? "📭 할 일이 없어요. 새 할 일을 추가해보세요!"
           : `남은 할 일: ${remainingCount}개`}

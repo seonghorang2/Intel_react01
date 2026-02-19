@@ -23,7 +23,7 @@ function Counter() {
   return (
     <div className="counter">
       <h1
-        className={`count ${count > 0 ? "positive" : count < 0 ? "negative" : ""}`}
+        className={`count ${count > 0 ? "counter_positive" : count < 0 ? "counter_negative" : ""}`}
       >
         {count}
       </h1>
@@ -31,6 +31,7 @@ function Counter() {
         <button onClick={minusCount} disabled={count === MIN}>
           -
         </button>
+
         <button onClick={resetCount}>Reset</button>
         <button onClick={addCount} disabled={count === MAX}>
           +
